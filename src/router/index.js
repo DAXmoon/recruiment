@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// import jobInfo from '../views/jobInfo'
 
 Vue.use(Router)
 
@@ -29,5 +30,30 @@ export default new Router({
       },
       component: ()=>import('@/views/register')
     },
+    {
+      path: '/companyDetail',
+      name: 'companyDetail',
+      meta: {
+        title: '公司详情'
+      },
+      component: ()=>import('@/views/companyDetail')
+    },
+    {
+      path: '/jobInfo',
+      name: 'jobInfo',
+      meta: {
+        title: '职位详情'
+      },
+      component: ()=>import('@/views/jobInfo')
+    },
+    {
+      path: '/userInfo',
+      name: 'userInfo',
+      meta: {
+        title: '用户信息'
+      },
+      component: ()=>import('@/views/userInfo')
+    },
+    
   ]
 })

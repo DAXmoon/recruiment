@@ -8,14 +8,10 @@
             
             <div class="company-card">
                 <div class="card" v-for="(item,key) in companyList" :key="key">
-                    <img :src="item.avatar" class="image" @click="getCompanyDetail(item.id)" >
+                    <img :src="item.avatar" class="image" @click="getCompanyDetail(item.id)">
                 </div>
             </div>
         </div>  
-         <div class="title">
-            <h3>热门职业</h3>
-            <h3 style="color: #5a5a5a;font-weight: 400">---JOBS---</h3>
-        </div>
     </div>
     
 </template>
@@ -23,6 +19,7 @@
 <script>
 import fetch from "../../api/fetch"
     export default {
+        name:'company',
         data(){
             return{
                 company:'',
@@ -38,10 +35,11 @@ import fetch from "../../api/fetch"
                 }
             })
         },
-            getCompanyDetail(){
+            getCompanyDetail(id){
                 localStorage.setItem('companyId',id)
                 this.$router.push({name:'companyDetail'})
             }
+            
         },
         mounted(){
             window.addEventListener('scroll', this.handler)
@@ -57,7 +55,7 @@ import fetch from "../../api/fetch"
         margin: 30px  auto;
         text-align: center;
         padding-left: 10px;
-        color: #000;
+        color: #ededed;
         background-color: #888;
         h3{
             margin: 0;
